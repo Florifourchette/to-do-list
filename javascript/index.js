@@ -1,4 +1,4 @@
-const listName = document.querySelector('input');
+/*const listName = document.querySelector('input');
 const btnNewList = document.querySelector('#btnNewlist');
 const storedList = Object.keys(localStorage);
 const displayListLocation = document.getElementById('overview-lists');
@@ -12,4 +12,5 @@ storedList.forEach((element) => {
 const listContainer = document.createElement("div");
 listContainer.innerHTML = `List name = ${listName}`;
 displayListLocation.appendChild(listContainer);
-})
+})*/
+document.write('hello');
