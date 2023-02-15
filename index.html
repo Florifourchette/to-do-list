@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/to-do-list/CSS/stylesheet.css">
-    <script src="/to-do-list/javascript/index.js" defer ></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/to-do-list/javascript/index.js" defer></script>
+    <link rel="stylesheet" href="/to-do-list/CSS/stylesheet.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <title><h1>My to-do lists</h1></title>
+      <title><h1>My to-do lists</h1></title>
     </header>
     <main>
-        <section>
+     <section>
             <h2>Create a new list</h2>
             <form>
                 <input type="text" placeholder="My new list name">
@@ -24,31 +24,50 @@
             <h2>My lists</h2>
             <div id="overview-lists"></div>
         </section>
-    </main>
+
+      <section>
+        <h2>Create a new list</h2>
+        <form>
+          <input type="text" placeholder="My new list name" />
+          <button id="btnNewlist">Create list</button>
+        </form>
+      </section>
+      <section>
+        <div>
+          <h2>My lists</h2>
+          <h3>My first list</h3>
+          <div class="'list-holder">
+          <ul class="to-do-item">
+            <li>
+              <input type="text" id="'addInput" placeholder="What needs to get done?" />
+              <button id="btnNewItem">Add</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+       
 
 
-     
-    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-     <script
-     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-     crossorigin="anonymous"
-   ></script>
- 
-   <script
-     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-     crossorigin="anonymous"
-   ></script>
- 
-     <script>
-     const popoverTriggerList = document.querySelectorAll(
-             '[data-bs-toggle="popover"]'
-         );
-         const popoverList = [...popoverTriggerList].map(
-             (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
-         );
-     </script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const popoverTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="popover"]'
+      );
+      const popoverList = [...popoverTriggerList].map(
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+      );
+    </script>
+  </body>
 </html>
