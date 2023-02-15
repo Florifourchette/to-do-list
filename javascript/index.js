@@ -1,17 +1,15 @@
-const addInput = document.querySelector('addInput')
-const addItem = document.querySelector('#btnNewItem')
-const itemList = document.querySelector('.listHolder')
+const listName = document.querySelector('input');
+const btnNewList = document.querySelector('#btnNewlist');
+const storedList = Object.keys(localStorage);
+const displayListLocation = document.getElementById('overview-lists');
 
-addItem.addEventListener('click', () =>{
-    const ul = itemList.querySelector('ul');
-    const li =document.createElement('li');
-    ul.appendChild(li);
-});
+btnNewList.addEventListener('click', () => {
+    localStorage.setItem("list name", listName.value);
+})
 
-// Add an item
-
-// Create a new and empty item
-
-document.write('hello')
-
-
+storedList.forEach((element) => {
+    const listName = localStorage.getItem('list name');
+const listContainer = document.createElement("div");
+listContainer.innerHTML = `List name = ${listName}`;
+displayListLocation.appendChild(listContainer);
+})
