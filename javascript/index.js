@@ -1,5 +1,5 @@
-/*const listName = document.querySelector('input');
-const btnNewList = document.querySelector('#btnNewlist');
+const listName = document.querySelector('input');
+const btnNewList = document.getElementById('btnNewlist');
 const storedList = Object.keys(localStorage);
 const displayListLocation = document.getElementById('overview-lists');
 
@@ -8,9 +8,9 @@ btnNewList.addEventListener('click', () => {
 })
 
 storedList.forEach((element) => {
-    const listName = localStorage.getItem('list name');
+    const listName = localStorage.getItem(element);
 const listContainer = document.createElement("div");
 listContainer.innerHTML = `List name = ${listName}`;
 displayListLocation.appendChild(listContainer);
-})*/
-document.write('hello');
+})
+
