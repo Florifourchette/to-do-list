@@ -10,6 +10,7 @@ btnNewList.addEventListener("click", () =>
 storedList.forEach((element) => {
   const listName = localStorage.getItem(element);
   const listContainer = document.createElement("li");
+  listContainer.setAttribute('id', listName)
   listContainer.innerHTML = `List name = ${listName}`;
   displayListLocation.appendChild(listContainer);
 });
