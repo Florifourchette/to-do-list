@@ -71,6 +71,12 @@ input {
     
     
 }
+li {
+    list-style-type: none;
+}
+#delete {
+    
+}
 footer {
     display:grid;
     justify-content: center;
