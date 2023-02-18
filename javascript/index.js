@@ -11,20 +11,11 @@ btnNewList.addEventListener("click", () =>
 storedList.forEach((element) => {
   const listName = localStorage.getItem(element);
   const listContainer = document.createElement("li");
-<<<<<<< HEAD
   const deleteItemButton = document.createElement("div");
   /* const listItem = listContainer.setAttribute("id", listName); //added by Oke, attempt to target via id */
   listContainer.innerHTML = `${listName}`;
   deleteItemButton.className="close";
   deleteItemButton.innerHTML = 'X';
-=======
-<<<<<<< HEAD
-  listContainer.innerHTML = ${listName};
-=======
-  /* const listItem = listContainer.setAttribute("id", listName); //added by Oke, attempt to target via id */
-  listContainer.innerHTML = `${listName}`;
->>>>>>> 63fb6fd87c30531b96e96b93656bd256035c8e62
->>>>>>> DEV
   displayListLocation.appendChild(listContainer);
   listContainer.appendChild(deleteItemButton);
 });
