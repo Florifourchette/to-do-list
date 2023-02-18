@@ -11,9 +11,13 @@ btnNewList.addEventListener("click", () =>
 storedList.forEach((element) => {
   const listName = localStorage.getItem(element);
   const listContainer = document.createElement("li");
+  const deleteItemButton = document.createElement("div");
   /* const listItem = listContainer.setAttribute("id", listName); //added by Oke, attempt to target via id */
   listContainer.innerHTML = `${listName}`;
+  deleteItemButton.className="close";
+  deleteItemButton.innerHTML = 'X';
   displayListLocation.appendChild(listContainer);
+  listContainer.appendChild(deleteItemButton);
 });
 
 function crossOut(event) {
