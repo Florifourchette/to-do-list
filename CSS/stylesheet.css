@@ -55,7 +55,7 @@ main h2 {
   height: 50px;
   outline: none;
 }
-input {
+.listCreationInput {
   font-style: normal;
   font-weight: 600;
   text-align: center;
@@ -137,5 +137,16 @@ li:nth-child(odd):hover {
 
 .addItem:hover {
   background-color: green;
+  color:white;
+}
+
+.addItemInput{
+  border:darkgray solid 1px;
+  padding: 5%;
+  border-radius:20px;
+}
+
+.addItemInput:hover{
+  background-color: lightgray;
   color:white;
 }
