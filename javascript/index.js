@@ -10,14 +10,48 @@ btnNewList.addEventListener("click", () =>
 
 storedList.forEach((element) => {
   const listName = localStorage.getItem(element);
+
+  // Variable to create the different element needed
+  // a li element to display each list name
+  // a div element for the delete button
+  // an input element to create new item within the list
+  // a button to add the new item to the list
   const listContainer = document.createElement("li");
-  const deleteItemButton = document.createElement("div");
-  /* const listItem = listContainer.setAttribute("id", listName); //added by Oke, attempt to target via id */
-  listContainer.innerHTML = `${listName}`;
-  deleteItemButton.className="close";
-  deleteItemButton.innerHTML = 'X';
+  const listnameContainer = document.createElement("div");
+  const deleteItemButtonContainer = document.createElement("button");
+  const optionContainer = document.createElement("div");
+  const addInputContainer = document.createElement("input");
+  const addItemButtonContainer = document.createElement("button");
+
+  // Creation of class to better target element in CSS
+  deleteItemButtonContainer.className = "close";
+  listContainer.className = "list";
+  optionContainer.className = "optionContainer";
+  addInputContainer.className = "addItemInput";
+  addItemButtonContainer.className = "addItem";
+
+  // Value of each element
+  addInputContainer.placeholder = "What is your new task?";
+  addItemButtonContainer.innerHTML = "ADD ITEM";
+  listnameContainer.innerHTML = `${listName}`;
+  deleteItemButtonContainer.innerHTML = "DELETE LIST";
+
+  // Location of where each element should be added
+  // From parent to child there is:
+  // overview-list: contains all li element (all lists)
+  // li element - one per list: which contains 2 div
+  // 1- listnameContainer: contains only the name of the list
+  // 2- optionContainer: in which you can find the 3 options (input to create a new item + add button + delete list button)
   displayListLocation.appendChild(listContainer);
-  listContainer.appendChild(deleteItemButton);
+  listContainer.appendChild(listnameContainer);
+
+  listContainer.appendChild(optionContainer);
+  optionContainer.appendChild(addInputContainer);
+  optionContainer.appendChild(addItemButtonContainer);
+  optionContainer.appendChild(deleteItemButtonContainer);
+
+  // Function has been added to the list name container so the list can be crossed once the list is done
+  listnameContainer.addEventListener("click", crossOut);
 });
 
 function crossOut(event) {
@@ -28,5 +62,5 @@ function crossOut(event) {
   }
 }
 
-myList.addEventListener("click", crossOut);
+// myList.addEventListener("click", crossOut);
 /* myList.removeEventListener("click", crossOut); */
