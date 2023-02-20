@@ -32,9 +32,9 @@ storedList.forEach((element) => {
 
   // Value of each element
   addInputContainer.placeholder = "What is your new task?";
-  addItemButtonContainer.innerHTML = "ADD ITEM";
+  addItemButtonContainer.innerHTML = "Edit";
   listnameContainer.innerHTML = `${listName}`;
-  deleteItemButtonContainer.innerHTML = "DELETE LIST";
+  deleteItemButtonContainer.innerHTML = "DELETE TASK";
 
   // Location of where each element should be added
   // From parent to child there is:
@@ -52,6 +52,18 @@ storedList.forEach((element) => {
 
   // Function has been added to the list name container so the list can be crossed once the list is done
   listnameContainer.addEventListener("click", crossOut);
+
+  // hide a list item
+  function hide(event) {
+    // bubbling up to the next li element
+    const liElement = event.target.closest("li");
+    liElement.style.display = "none";
+    localStorage.removeItem(listName);
+  }
+
+  textDecoration = "line-through";
+  // Attach the listener to the delete button
+  deleteItemButtonContainer.addEventListener("click", hide, false);
 });
 
 function crossOut(event) {
@@ -61,6 +73,3 @@ function crossOut(event) {
     event.target.style.textDecoration = "line-through";
   }
 }
-
-// myList.addEventListener("click", crossOut);
-/* myList.removeEventListener("click", crossOut); */
