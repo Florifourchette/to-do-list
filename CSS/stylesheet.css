@@ -55,6 +55,21 @@ main h2 {
   height: 50px;
   outline: none;
 }
+#delete-all-btn {
+color: black;
+  font: weight 600;
+  background-color: yellow;
+  font-style: normal;
+  font-weight: 600;
+  border-radius: 20px;
+  border-color: yellow;
+  border-width: 4px;
+  border-style: solid;
+  justify-items: center;
+  width: 200px;
+  height: 50px;
+  outline: none;
+}
 .listCreationInput {
   font-style: normal;
   font-weight: 600;
