@@ -3,6 +3,7 @@ const btnNewList = document.getElementById("btnNewlist");
 const storedList = Object.keys(localStorage);
 const displayListLocation = document.getElementById("overview-lists");
 const myList = document.querySelector("#overview-lists");
+const deleteAllBtn = document.querySelector('#delete-all-btn')
 
 btnNewList.addEventListener("click", () =>
   localStorage.setItem(listName.value, listName.value)
@@ -73,3 +74,9 @@ function crossOut(event) {
     event.target.style.textDecoration = "line-through";
   }
 }
+
+deleteAllBtn.addEventListener("click", () => {
+  // const listItems = document.querySelectorAll("li");
+  localStorage.clear();
+  // listItems.forEach((item) => item.remove());
+});
