@@ -5,9 +5,8 @@ const displayListLocation = document.getElementById("overview-lists");
 const myList = document.querySelector("#overview-lists");
 const deleteAllBtn = document.querySelector("#delete-all-btn");
 
-btnNewList.addEventListener("click", () =>
   localStorage.setItem(listName.value, listName.value)
-);
+});
 
 storedList.forEach((element) => {
   const listName = localStorage.getItem(element);
@@ -87,3 +86,6 @@ deleteAllBtn.addEventListener("click", () => {
   localStorage.clear();
   // listItems.forEach((item) => item.remove());
 });
+
+
+
