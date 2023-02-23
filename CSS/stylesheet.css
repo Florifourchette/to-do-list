@@ -87,7 +87,7 @@ footer {
 }
 
 ul {
-  width: 30%;
+  width: 50%;
 }
 
 li {
@@ -96,6 +96,7 @@ li {
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px;
 }
 
 li:hover {
@@ -160,6 +161,12 @@ li:nth-child(odd):hover {
   color: white;
 }
 
-.new_div {
-  display: none;
+.checkboxes {
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+}
+
+input:checked ~ .checkmark::after {
+  background-color: green;
 }
