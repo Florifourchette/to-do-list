@@ -4,7 +4,6 @@ const storedList = Object.keys(localStorage);
 const displayListLocation = document.getElementById("overview-lists");
 const myList = document.querySelector("#overview-lists");
 const deleteAllBtn = document.querySelector("#delete-all-btn");
-let form = document.querySelector(".form");
 
 btnNewList.addEventListener("click", () => {
   localStorage.setItem(listName.value, listName.value);
@@ -66,6 +65,13 @@ storedList.forEach((element) => {
   textDecoration = "line-through";
   // Attach the listener to the delete button
   deleteItemButtonContainer.addEventListener("click", hide, false);
+
+  //edit button code
+  addItemButtonContainer.addEventListener("click", () => {
+    listnameContainer.innerHTML = "";
+    listnameContainer.innerHTML = addInputContainer.value;
+    addInputContainer.value = "";
+  });
 });
 
 function crossOut(event) {
