@@ -19,6 +19,8 @@ storedList.forEach((element) => {
   // a button to add the new item to the list
   const listContainer = document.createElement("li");
   const listnameContainer = document.createElement("div");
+  const checkboxContainer = document.createElement("div");
+  const checkbox = document.createElement("input");
   const deleteItemButtonContainer = document.createElement("button");
   const optionContainer = document.createElement("div");
   const addInputContainer = document.createElement("input");
@@ -30,12 +32,14 @@ storedList.forEach((element) => {
   optionContainer.className = "optionContainer";
   addInputContainer.className = "addItemInput";
   addItemButtonContainer.className = "addItem";
+  checkbox.classList = "checkboxes";
 
   // Value of each element
   addInputContainer.placeholder = "What is your new task?";
   addItemButtonContainer.innerHTML = "Edit";
   listnameContainer.innerHTML = `${listName}`;
   deleteItemButtonContainer.innerHTML = "DELETE TASK";
+  checkbox.type = "checkbox";
 
   // Location of where each element should be added
   // From parent to child there is:
@@ -44,6 +48,10 @@ storedList.forEach((element) => {
   // 1- listnameContainer: contains only the name of the list
   // 2- optionContainer: in which you can find the 3 options (input to create a new item + add button + delete list button)
   displayListLocation.appendChild(listContainer);
+
+  listContainer.appendChild(checkboxContainer);
+  checkboxContainer.appendChild(checkbox);
+
   listContainer.appendChild(listnameContainer);
 
   listContainer.appendChild(optionContainer);
@@ -53,6 +61,13 @@ storedList.forEach((element) => {
 
   // Function has been added to the list name container so the list can be crossed once the list is done
   listnameContainer.addEventListener("click", crossOut);
+  checkbox.addEventListener("click", () => {
+    if (checkbox.checked === true) {
+      listnameContainer.style.textDecoration = "line-through";
+    } else {
+      listnameContainer.style.textDecoration = "none";
+    }
+  });
 
   // hide a list item
   function hide(event) {
